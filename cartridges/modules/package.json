@@ -1,0 +1,9 @@
+{
+  "name": "modules",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "https://github.com/ulan3d/vue#v2.5.21_dw_compliant"
+  }
+}
