@@ -3,22 +3,35 @@
 var path = require('path');
 var ExtractTextPlugin = require('sgmf-scripts')['extract-text-webpack-plugin'];
 var sgmfScripts = require('sgmf-scripts');
+var VueLoaderPlugin = require('vue-loader/lib/plugin');
 
+console.log(sgmfScripts.createJsPath());
 module.exports = [{
-    mode: 'production',
+    mode: 'development',
     name: 'js',
     entry: sgmfScripts.createJsPath(),
     output: {
         path: path.resolve('./cartridges/vue_sfra/cartridge/static'),
         filename: '[name].js'
     },
+    module: {
+        rules: [
+          {
+            test: /\.vue$/,
+            loader: 'vue-loader'
+          },
+    ]},
     resolve: {
         alias: {
             jquery: path.resolve(__dirname, '../storefront-reference-architecture/node_modules/jquery'),
             bootstrap: path.resolve(__dirname, '../storefront-reference-architecture/node_modules/bootstrap'),
             lodash: path.resolve(__dirname, '../storefront-reference-architecture/node_modules/lodash')
         }
-    }
+    },
+  plugins: [
+    // убедитесь что подключили плагин!
+    new VueLoaderPlugin()
+  ]
 }, {
     mode: 'none',
     name: 'scss',

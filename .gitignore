@@ -3,6 +3,9 @@
 /cartridges/*/cartridge/static/*/css/
 /cartridges/*/cartridge/static/*/js/
 /cartridges/*/cartridge/static/*/fonts/
+/cartridges/modules/vue/
+/cartridges/modules/.yarn-integrity
+/cartridges/vue_sfra/cartridge/components/dist/
 
 coverage/
 npm-debug.log
