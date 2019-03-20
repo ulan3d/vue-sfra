@@ -9,7 +9,8 @@
     "uploadCartridge": "sgmf-scripts --uploadCartridge vue_sfra",
     "compile:js": "sgmf-scripts --compile js",
     "compile:scss": "sgmf-scripts --compile css",
-    "compile:server": "webpack --config webpack.server.js"
+    "compile:server": "webpack --config webpack.server.js",
+    "compile:client": "webpack --config webpack.client.js"
   },
   "devDependencies": {
     "@vue/cli-service": "^3.2.0",
@@ -44,5 +45,7 @@
   "paths": {
     "base": "../storefront-reference-architecture/cartridges/app_storefront_base/"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vue": "https://github.com/ulan3d/vue#v2.5.21_dw_compliant"
+  }
 }

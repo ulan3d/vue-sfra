@@ -1,13 +1,13 @@
 <template>
   <div>
-    <p>Hello {{ name }}</p>
-    <p>Welcome to China!</p>
+    <h2>likes: {{count}} <button v-on:click="$emit('plus-one')">+1</button></h2>
   </div>
 </template>
 
 <script>
 export default {
-  props: [ 'name' ],
+  name: 'likes',
+  props: [ 'count' ],
   replace: false,
 };
 </script>

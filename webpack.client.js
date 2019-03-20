@@ -4,19 +4,16 @@ let VueLoaderPlugin = require('vue-loader/lib/plugin');
 let glob = require("glob");
 
 module.exports = {
-  target: 'node',
   mode: 'development',//'production',
   devtool: 'source-map',
-  entry: glob.sync("./cartridges/vue_sfra/cartridge/components/*.vue").reduce((acc, el) => {
-      let name = el.split('/').pop().replace(/\.[^.]+$/, '');
-      acc[name] = el;
-      return acc;
+  entry: glob.sync("./cartridges/vue_sfra/cartridge/components/*.js").reduce((acc, el) => {
+    let name = el.split('/').pop().replace(/\.[^.]+$/, '');
+    acc[name] = el;
+    return acc;
   }, {}),
   output: {
-    libraryTarget: 'commonjs2',
-    libraryExport: "default",
-    path: path.resolve('./cartridges/vue_sfra/cartridge/components/dist'),
-    filename: '[name].js'
+    path: path.resolve('./cartridges/vue_sfra/cartridge/static/default/js'),
+    filename: 'vue-[name].js'
   },
   module: {
     rules: [
@@ -30,7 +27,7 @@ module.exports = {
         include: projectRoot,
         exclude: /node_modules/,
         options: {
-            presets: ['babel-preset-env'],
+          presets: ['babel-preset-env'],
         }
       },
     ]
@@ -39,3 +36,4 @@ module.exports = {
     new VueLoaderPlugin()
   ]
 };
+

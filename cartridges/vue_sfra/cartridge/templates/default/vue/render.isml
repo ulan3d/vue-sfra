@@ -1,0 +1,7 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/vue-client.js');
+    </isscript>
+    <isprint value="${pdict.vueResultHtml}" encoding="off" />
+</isdecorate>

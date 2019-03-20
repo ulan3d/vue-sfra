@@ -1,9 +1,7 @@
 <template>
   <div class="my-app">
-    <h1>Hello {{pdict.name}}</h1>
-    <h2>likes: {{pdict.likes}} <button v-on:click="plus">+1</button></h2>
-    <my-cmp v-bind:name="name"></my-cmp>
-    <div>propsA: {{pdict}}</div>
+    <h1>Hello {{name}}</h1>
+    <likes v-bind:count="count" v-on:plus-one="plus"></likes>
   </div>
 </template>
 
@@ -14,13 +12,18 @@ export default {
   components: {
     Likes,
   },
-  props: ['pdict'],
+  data: function() {
+    return {
+        name: 'John',
+        count: 0
+    }
+  },
   created() {
-    ++this.likes;
+    ++this.count;
   },
   methods: {
     plus() {
-      this.likes++;
+      this.count++;
     },
   },
 };
