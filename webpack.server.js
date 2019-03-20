@@ -6,7 +6,7 @@ let glob = require("glob");
 module.exports = {
   target: 'node',
   mode: 'development',//'production',
-  devtool: 'source-map',
+  devtool: 'none',
   entry: glob.sync("./cartridges/vue_sfra/cartridge/components/*.vue").reduce((acc, el) => {
       let name = el.split('/').pop().replace(/\.[^.]+$/, '');
       acc[name] = el;

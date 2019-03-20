@@ -1,7 +1,7 @@
 <template>
   <div class="my-app">
-    <h1>Hello {{name}}</h1>
-    <likes v-bind:count="count" v-on:plus-one="plus"></likes>
+    <h1>Hello {{pdict.name}}</h1>
+    <likes v-bind:count="pdict.count" v-on:plus-one="plus"></likes>
   </div>
 </template>
 
@@ -13,17 +13,15 @@ export default {
     Likes,
   },
   data: function() {
-    return {
-        name: 'John',
-        count: 0
+    return { pdict : {
+            name: 'John',
+            count: 0
+        }
     }
-  },
-  created() {
-    ++this.count;
   },
   methods: {
     plus() {
-      this.count++;
+      this.pdict.count++;
     },
   },
 };
