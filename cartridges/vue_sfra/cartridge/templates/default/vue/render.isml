@@ -2,7 +2,10 @@
     <isprint value="${pdict.vueResultHtml}" encoding="off" />
     <isscript>
         var assets = require('*/cartridge/scripts/assets.js');
-        assets.addJs('/js/vue-client.js');
+        assets.addJs('/js/productDetail.js');
+        assets.addCss('/css/product/detail.css');
+
+        //assets.addJs('/js/vue-client.js');
     </isscript>
     <script>window.__INITIAL_STATE__=<isprint value="${pdict.__INITIAL_STATE__}" encoding="off" /></script>
 </isdecorate>
